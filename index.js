@@ -11,8 +11,6 @@ const productRouter = require('./routes/product');
 const orderRouter = require('./routes/order');
 
 const PORT = process.env.PORT || 3000;
-const DB = "mongodb+srv://avideogade57:QbMI7qI0Qw96tXSb@cluster0.zezbudh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-
 const app = express();
 
 app.use(express.json());
