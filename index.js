@@ -25,11 +25,9 @@ app.use(subcategoryRouter);
 app.use(productRouter);
 app.use(orderRouter);
 
-mongoose.connect(DB).then(function(){
-    console.log("Connection is successful");
-}).catch(function(err){
-    console.log(err);
-});
+mongoose.connect(process.env.DATABASE).then(() => {
+    console.log("MongoDB connection successful");
+})
 
 app.listen(PORT,"0.0.0.0",function(){
     console.log(`Server is running on port ${PORT}`);
