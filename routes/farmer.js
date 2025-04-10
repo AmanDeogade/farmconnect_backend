@@ -6,7 +6,7 @@ const farmerRouter = express.Router();
 
 farmerRouter.post('/api/farmer/signup', async (req, res) => {
     try {
-        const { fullName, email, password } = req.body;
+        const { fullName, email, password, state, city, area, agromethod, description } = req.body;
 
         const existingEmail = await Farmer.findOne({ email });
         if (existingEmail) {
