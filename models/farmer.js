@@ -46,6 +46,10 @@ const farmerSchema = new mongoose.Schema({
         type: String,
         default: "",
     },
+    description: {
+        type: String,
+        default: "",
+    },
     password: {
         type: String,
         required: true,
