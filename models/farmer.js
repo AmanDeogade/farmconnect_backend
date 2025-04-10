@@ -38,6 +38,14 @@ const farmerSchema = new mongoose.Schema({
         type: String,
         default: "farmer",
     },
+    area: {
+        type: String,
+        default: "",
+    },
+    agromethod: {
+        type: String,
+        default: "",
+    },
     password: {
         type: String,
         required: true,
