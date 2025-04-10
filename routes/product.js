@@ -5,7 +5,7 @@ const Farmer = require('../models/farmer');
 
 productRoute.post('/api/add-product', async (req, res) => {
     try {
-        const { productName, productPrice, quantity, description, category, farmerId, fullName, subCategory, images } = req.body; //extract image from the request the client will make
+        const { productName, productPrice, quantity, description, category, farmerId, fullName, subCategory, images, quantityUnit } = req.body; //extract image from the request the client will make
         const product = new Product({
             productName,
             productPrice,
@@ -15,7 +15,8 @@ productRoute.post('/api/add-product', async (req, res) => {
             farmerId,
             fullName,
             subCategory,
-            images
+            images,
+            quantityUnit
         });
         await product.save();
         return res.status(201).send(product);
