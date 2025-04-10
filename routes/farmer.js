@@ -17,7 +17,12 @@ farmerRouter.post('/api/farmer/signup', async (req, res) => {
             let farmer = new Farmer({
                 fullName,
                 email,
-                password: hashedPassword
+                password: hashedPassword,
+                state,
+                city,
+                area,
+                agromethod, 
+                description
             });
             farmer = await farmer.save();
             res.json({ farmer });
