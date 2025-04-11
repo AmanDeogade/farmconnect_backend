@@ -94,6 +94,7 @@ productRoute.get('/api/search-products', async (req, res) => {
 
         const product = await Product.find({
             $or: [{ productName: { $regex: query, $options: 'i' } },
+            { subCategory : { $regex: query, $options: 'i' }  },
             { category: { $regex: query, $options: 'i' } },
             { description: { $regex: query, $options: 'i' } }]
         });
